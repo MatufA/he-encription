@@ -1,0 +1,16 @@
+{
+  "name": "safe-calc-client",
+  "version": "1.0.0",
+  "description": "a simple safe camputational client page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.2.1",
+    "dateformat": "^3.0.3",
+    "express": "^4.17.1"
+  }
+}
