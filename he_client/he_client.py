@@ -2,7 +2,7 @@ import he_encryption
 
 
 class HeClient:
-    def __init__(self, n_server=1):
+    def __init__(self, n_server=2):
         self.n_server = n_server
         self.q, self.g = he_encryption.generate_primes(n=1024, k=2)
         self.dec_key = he_encryption.gen_key(self.q)
@@ -28,10 +28,3 @@ class HeClient:
         :rtype: tuple
         """
         return he_encryption.encrypt(plain_msg, self.q, self.prv_key, self.g)
-# el gamal encryption
-
-# secret sharing
-# multiply each bits. (private * info)
-
-# additive secret sharing
-#

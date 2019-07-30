@@ -52,9 +52,9 @@ def additive_secret_shares(c):
     """
 
     :param c: string, an encryption message.
-    :return: a r and c-rב.
-    :rtype: tuple
+    :return: a r and c-r as {r: c-t}.
+    :rtype: dict
     """
     import random
     r = random.getrandbits(512)
-    return hex(r), hex(int(c, 16) - r)
+    return {hex(r): hex(int(c, 16) - r)}
