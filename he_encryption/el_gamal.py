@@ -12,6 +12,7 @@ from math import pow
 from math import gcd
 import time
 from he_encryption.generate_primes import generate_primes
+from he_encryption.generate_primes import generate_creator
 
 
 def gen_key(q):
@@ -65,10 +66,13 @@ def main():
     msg = 'encryption'
     print("Original Message :", msg)
 
-    q, g = generate_primes(n=1024, k=2)
+    q = generate_primes(n=1024, k=1)[0]
+    g = generate_creator(q=q)
+    print("q: " + str(q))
+    print("g: " + str(g))
 
     key = gen_key(q)  # Private key for receiver
-    h = modular_exponentiation(g, key, q)
+    h = modular_exponentiation(g, key, q)  # public key (g^c)
     print("g used : ", g)
     print("g^a used : ", h)
 

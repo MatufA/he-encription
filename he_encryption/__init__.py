@@ -7,5 +7,6 @@ from .el_gamal import modular_exponentiation
 
 from he_encryption import generate_primes
 from he_encryption.generate_primes import generate_primes
+from he_encryption.generate_primes import generate_creator
 
 from .algorithms import *

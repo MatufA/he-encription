@@ -117,6 +117,19 @@ def generate_primes(n=512, k=1):
     return primes
 
 
+def generate_creator(q):
+    """generate a creator for cyclic group of Z*q. (Lagrange's theorem - group theory)
+
+    :param q: a big prime. (the order of the group)
+    :return: a creator of the cyclic group.
+    """
+    for num in range(1, q):
+        p = (num * q) + 1
+        if miller_rabin_primality_test(p, s=7):
+            g_tag = random.getrandbits(len(str(p))) % p
+            return pow(g_tag, num, q)
+
+
 def main():
     n = 2048
     primes = generate_primes(n=n)
