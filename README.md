@@ -16,6 +16,7 @@ Use Python 3.* [download here](https://www.python.org/downloads/).
 
 ## Requirements
 * bitarray
+* pytest
 
 ## Authors
 * **Adi Achwal** - *Homomorphic Encryption* - [Profile](https://github.com/adiachwal122)

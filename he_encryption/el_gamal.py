@@ -16,6 +16,11 @@ from he_encryption.generate_primes import generate_creator
 
 
 def gen_key(q):
+    """generate private key.
+
+    :param q:
+    :return:
+    """
     key = random.randint(pow(10, 20), q-1)
     while gcd(q, key) != 1:
         key = random.randint(pow(10, 20), q-1)
@@ -24,6 +29,14 @@ def gen_key(q):
 
 # Modular exponentiation
 def modular_exponentiation(b, e, m):
+    """produced modular exponentiation.
+    https://en.wikipedia.org/wiki/Modular_exponentiation
+
+    :param b: a base number.
+    :param e: an exponent.
+    :param m: a modulo.
+    :return: a reminder of b modulo m.
+    """
     x = 1
     y = b
     while e > 0:
@@ -34,8 +47,15 @@ def modular_exponentiation(b, e, m):
     return x % m
 
 
-# Asymmetric encryption
 def encrypt(msg, q, h, g):
+    """encrypt massage with ElGamal.
+
+    :param msg: a message data.
+    :param q: a prime number modulo.
+    :param h: a public key ElGamal.
+    :param g: a prime number g.
+    :return: an encrypted message. (ElGamal output, g^k and g^ak)
+    """
     en_msg = []
 
     k = gen_key(q)  # Private key for sender
@@ -54,6 +74,14 @@ def encrypt(msg, q, h, g):
 
 
 def decrypt(en_msg, p, key, q):
+    """decrypt massage with ElGamal.
+
+    :param en_msg: an encrypted message with ElGamal.
+    :param p: a g^k.
+    :param key: a private key.
+    :param q: a prime number modulo.
+    :return: a decrypted message.
+    """
     dr_msg = []
     h = modular_exponentiation(p, key, q)
     for i in range(0, len(en_msg)):
