@@ -11,7 +11,7 @@ f(x) = f0(x) + f1(x), but each fi hides f. We are using branching programs which
 
 The scheme described in the article provides the ability to share data without to expose it.
 
-For more information our [Wiki](https://github.com/MatufA/he-encription/wiki)
+For more information our [Wiki](https://github.com/MatufA/he-encription/wiki/Breaking-the-Circuit-Size-Barrier-for-Secure-Computation-Under-DDH%E2%88%97-(Implementation))
 
 ## Python
 Use Python 3.* [download here](https://www.python.org/downloads/).
